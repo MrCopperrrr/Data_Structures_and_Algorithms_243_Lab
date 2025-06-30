@@ -1,19 +1,4 @@
-# Lab 1: Basic Linked List Operations
-
-## Overview
-
-This lab focuses on implementing and manipulating linked lists in C++.  The goal is to gain experience with basic linked list operations, including adding elements, displaying the list, and managing memory.
-
-## Completed Exercises
-
-*   **3.1: Create and Display a Static Linked List**
-*   **3.2: Build a Linked List from User Input**
-    *   a) List of Positive Numbers
-    *   b) List of Even Numbers
-*   **3.3: Add to Front if Perfect Square**
-*   **3.4: Add to End**
-*   **3.5: Add to Front or End Based on Parity**
-*   **3.6: Add at a Specific Index**
+# LAB 1: BASIC OPERATIONS ON LINKED LIST
 
 ## Exercise Implementation Details
 
