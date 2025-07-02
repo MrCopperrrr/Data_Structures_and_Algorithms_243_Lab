@@ -1,8 +1,7 @@
 /*
-g++ -o cc Count_Consonants.cpp
-./cc
+g++ -o count 6_Count_Consonants.cpp
+./count
 */
-
 
 #include <iostream>
 using namespace std;

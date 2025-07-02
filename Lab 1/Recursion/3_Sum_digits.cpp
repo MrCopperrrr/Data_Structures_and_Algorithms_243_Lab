@@ -1,6 +1,6 @@
 /*
-g++ -o sd Sum_digits.cpp
-./sd
+g++ -o sum 3_Sum_digits.cpp
+./sum
 */
 
 #include <iostream>

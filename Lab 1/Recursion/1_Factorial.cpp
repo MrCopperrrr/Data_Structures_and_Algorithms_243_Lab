@@ -1,5 +1,5 @@
 /*
-g++ -o fac Factorial.cpp
+g++ -o fac 1_Factorial.cpp
 ./fac
 */
 

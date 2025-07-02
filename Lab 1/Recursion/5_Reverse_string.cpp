@@ -1,7 +1,8 @@
 /*
-g++ -o rev Reverse_string.cpp
-./rev
+g++ -o reverse 5_Reverse_string.cpp
+./reverse
 */
+
 #include <iostream>
 #include <string>
 using namespace std;

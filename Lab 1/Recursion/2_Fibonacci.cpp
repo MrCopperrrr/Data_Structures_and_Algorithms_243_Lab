@@ -1,5 +1,5 @@
 /*
-g++ -o fibo Fibonacci.cpp
+g++ -o fibo 2_Fibonacci.cpp
 ./fibo
 */
 

@@ -1,3 +1,9 @@
+/*
+g++ -o power 4_Power_function.cpp
+./power
+*/
+
+
 #include <iostream>
 
 using namespace std;
