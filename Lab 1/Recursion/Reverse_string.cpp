@@ -13,5 +13,9 @@ string reverse (string s){
 int main() {
     string s;
     cout << reverse("Hello") << endl;
+    cout << reverse("I love HCMUT") << endl;
+    cout << reverse("") << endl;
+
+
     return 0;
 }
