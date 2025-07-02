@@ -1,3 +1,8 @@
+/*
+g++ -o sd Sum_digits.cpp
+./sd
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -18,6 +23,6 @@ int main(){
     int n;
     cout << sum_digits(123456789) << endl; //45
     cout << sum_digits(88888888) << endl; //64
-    cout << sum_digits(808080080) << endl;
+    cout << sum_digits(808080080) << endl; //32
     return 0;
 }
