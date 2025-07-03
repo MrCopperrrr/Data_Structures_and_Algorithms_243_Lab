@@ -48,7 +48,7 @@ class List{
 		}
 
         int addFirstIfPerfectSquare(int n){
-            if(sqrt(n) == round(sqrt(n))){
+            if(sqrt(n) == round(sqrt(n))){  //sqrt(15) = 3.87298, round(sqrt(15)) = 4
                 addFirst(n);
                 return 1;
             } else {
