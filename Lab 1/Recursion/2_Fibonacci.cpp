@@ -15,6 +15,8 @@ int fibo(int n){
 
 int main(){
     int n;
-    cout << fibo(1000);
+    cout << fibo(6) << endl; //8
+    cout << fibo(10) << endl; //55
+    cout << fibo(20) << endl; //6765
     return 0;
 }
