@@ -7,19 +7,6 @@ g++ -o pali 8_Palindrome.cpp
 
 using namespace std;
 
-// bool is_palindrome(string s) {
-//     if (s.length() <= 1) return true; 
-//     if (s[0] != s[s.length() - 1]) return false; 
-//     return is_palindrome(s.substr(1, s.length() - 2)); 
-
-//     /*
-//     index:  012345
-//     string: abcdef
-//     length: 123456
-//     */
-// }
-
-
 //Leetcode 125
 bool is_palindrome(string s){
     return fun(s, 0, s.length() - 1);
