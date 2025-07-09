@@ -10,18 +10,21 @@ template<class Node_entry>
 Node<Node_entry>::Node() {
 	next = NULL; 
 }
+
 //---------------------------------------------------------
 template<class Node_entry>
 Node<Node_entry>::Node(Node_entry item, Node<Node_entry> *link) {
 	entry = item; 
 	next = link; 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 List<List_entry>::List() {
 	head = NULL; 
 	count = 0; 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 List<List_entry>::~List() {
@@ -29,6 +32,7 @@ List<List_entry>::~List() {
 	while (!empty())
 		remove(0, temp); 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Node<List_entry> *List<List_entry>::set_position(int position) {
@@ -36,6 +40,7 @@ Node<List_entry> *List<List_entry>::set_position(int position) {
 	for (int i = 0; i < position; i++) q = q->next; 
 	return q;
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 void List<List_entry>::clear() {
@@ -43,11 +48,13 @@ void List<List_entry>::clear() {
 	while (!empty())
 		remove(0, temp); 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 int List<List_entry>::size() {
 	return count; 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Error_code List<List_entry>::insert(int position, List_entry x) {
@@ -70,6 +77,7 @@ Error_code List<List_entry>::insert(int position, List_entry x) {
 	count++;
 	return success;
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Error_code List<List_entry>::remove(int position, List_entry &x) {
@@ -89,11 +97,13 @@ Error_code List<List_entry>::remove(int position, List_entry &x) {
 	count--;
 	return success;
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 bool List<List_entry>::empty() {
 	return (count == 0); 
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Error_code List<List_entry>::retrieve(int position, List_entry &x) {
@@ -101,6 +111,7 @@ Error_code List<List_entry>::retrieve(int position, List_entry &x) {
 	x = set_position(position)->entry;
 	return success;
 }
+
 //---------------------------------------------------------
 template <class List_entry>
 void List<List_entry>::printAll() {
@@ -111,6 +122,7 @@ void List<List_entry>::printAll() {
 	}
 	cout << endl;
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Error_code List<List_entry>::remove_by_value(List_entry x) {
@@ -131,6 +143,7 @@ Error_code List<List_entry>::remove_by_value(List_entry x) {
 	}
 	return not_present;
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 Error_code List<List_entry>::remove_last(List_entry x) {
@@ -146,6 +159,7 @@ Error_code List<List_entry>::remove_last(List_entry x) {
 	}
 	return not_present;
 }
+
 //---------------------------------------------------------
 bool is_prime(int n) {
 	if (n < 2) return false;
@@ -165,6 +179,7 @@ void List<List_entry>::remove_prime_positions() {
 		}
 	}
 }
+
 //---------------------------------------------------------
 template<class List_entry>
 void List<List_entry>::remove_all(List_entry x) {
