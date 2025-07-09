@@ -42,14 +42,14 @@ LinkedList::~LinkedList() {
 
 void LinkedList::display(){
     Node* temp = head;
-			cout << "{";
-			while (temp!=NULL) {
-				cout << temp->data;
-				if(temp->next != NULL)
-					cout << ", ";
-				temp = temp->next;
-			}
-			cout << "}";
+    cout << "{";
+    while (temp!=NULL) {
+        cout << temp->data;
+        if(temp->next != NULL)
+            cout << ", ";
+        temp = temp->next;
+    }
+    cout << "}";
 }
 
 void LinkedList::encodeElement(int value) {
