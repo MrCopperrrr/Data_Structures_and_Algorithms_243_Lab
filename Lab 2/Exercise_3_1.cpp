@@ -20,8 +20,6 @@ private:
 public:
     LinkedList();
     ~LinkedList();
-    void addFirst(int);
-    void addLast(int);
     void display();
     void pushElement(int value); 
     int popElement(); 
@@ -41,14 +39,6 @@ LinkedList::~LinkedList() {
     }
 }
 
-void LinkedList::addFirst(int value) {
-    Node* temp = new Node;
-    temp->data = value;
-    temp->next = head;
-    head = temp;
-    count++;
-
-}
 
 void LinkedList::display(){
     Node* temp = head;
