@@ -59,6 +59,7 @@ int List<List_entry>::size() {
 template<class List_entry>
 Error_code List<List_entry>::insert(int position, List_entry x) {
 	if (position < 0 || position > count) return rangeerror;
+    //xác định nút trước và sau khi chèn
 	Node<List_entry> *new_node, *previous, *following;
 	if (position > 0) {
 		previous = set_position(position - 1);
@@ -67,9 +68,11 @@ Error_code List<List_entry>::insert(int position, List_entry x) {
 	else {
 		following = head;
 	}
+    // tạo nút mới
 	new_node = new Node<List_entry>(x, following);
 	if (new_node == NULL)
 		return overflow;
+    // gán nút mới vào danh sách
 	if (position == 0)
 		head = new_node;
 	else
