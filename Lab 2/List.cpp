@@ -86,15 +86,18 @@ template<class List_entry>
 Error_code List<List_entry>::remove(int position, List_entry &x) {
 	if (position < 0 || position >= count) return rangeerror;
 	Node<List_entry> *old_node, *previous;
+    //xóa đầu list
 	if (position == 0) {
 		old_node = head;
 		head = head->next;
 	}
+    //xóa vị trí khác
 	else {
 		previous = set_position(position - 1);
 		old_node = previous->next;
 		previous->next = old_node->next;
 	}
+    //lưu và xóa node
 	x = old_node->entry;
 	delete old_node;
 	count--;
