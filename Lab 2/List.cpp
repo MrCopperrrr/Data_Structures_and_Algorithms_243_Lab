@@ -122,10 +122,13 @@ Error_code List<List_entry>::retrieve(int position, List_entry &x) {
 template <class List_entry>
 void List<List_entry>::printAll() {
 	Node<List_entry> *p = head;
+	cout << "{";
 	while (p != NULL) {
-		cout << p->entry << " ";
+		cout << p->entry;
+		if(p->next != NULL) cout << ", ";
 		p = p->next;
 	}
+	cout << "}";
 	cout << endl;
 }
 
@@ -177,11 +180,11 @@ bool is_prime(int n) {
 template<class List_entry>
 void List<List_entry>::remove_prime_positions() {
 	List_entry dummy;
-	int i = 0, offset = 0;
-	for (int pos = 0; pos < count; ++pos) {
+	//int i = 0, offset = 0;
+	for (int pos = count - 1; pos >= 0; --pos) {
 		if (is_prime(pos)) {
-			remove(pos - offset, dummy);
-			offset++;
+			remove(pos, dummy);
+			//offset++;
 		}
 	}
 }
