@@ -331,7 +331,7 @@ void Tree<Tree_entry>::delete_leaves_and_printNLR() {
     cout << endl;
 }
 
-// LinkList implementation
+// LinkList
 template <class T>
 LinkList<T>::~LinkList() {
     ListNode<T> *cur = head;
