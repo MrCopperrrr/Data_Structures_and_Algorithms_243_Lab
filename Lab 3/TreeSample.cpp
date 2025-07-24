@@ -310,26 +310,24 @@ void Tree<Tree_entry>::printcount_leaves() {
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::delete_leaves(TreeNode<Tree_entry>* &subroot) {
-	if(suvbroot == NULL) reutrn;
+	if(subroot == NULL) return;
 	if(subroot->left == NULL && subroot->right == NULL) {
 		delete subroot;
 		subroot = NULL;
 		return;
 	}
-	if(subroot->left != NULL) {
-		delete_leaves(subroot->left);
-	}
-	if(subroot->right != NULL) {
-		delete_leaves(subroot->right);
-	}
+	delete_leaves(subroot->left);
+	delete_leaves(subroot->right);
+	
 }
 
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::delete_leaves_and_printNLR() {
-	delete_leaves(root);
-	cout << "Print NLR after deleting all leaves: ";
-	printNLR();
-	cout << endl;
+    swapleftandright(root);      // đảo cây để xóa cho giống vd
+    delete_leaves(root);         
+    cout << "Print NLR after deleting all leaves: ";
+    printNLR();
+    cout << endl;
 }
 #endif //__TREESAMPLE__CPP__
