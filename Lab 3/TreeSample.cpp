@@ -284,7 +284,7 @@ void Tree<Tree_entry>::swapleftandright(TreeNode<Tree_entry> *subroot) {
 
 //---------------------------------------------------------
 template<class Tree_entry>
-void Tree<Tree_entry>:: printafterswap() {
+void Tree<Tree_entry>:: printafterswap(){
 	swapleftandright(root);
 	cout << "Print after swap (NLR): ";
 	printNLR();
