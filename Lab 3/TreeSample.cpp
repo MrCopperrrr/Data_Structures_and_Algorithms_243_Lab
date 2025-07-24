@@ -4,7 +4,8 @@
 // TreeSample.cpp : Defines the entry point for the console application.
 //
 
-#include <iostream.h>
+#include <iostream>
+using namespace std;
 
 #include "TreeSample.h"
 
@@ -46,11 +47,15 @@ void Tree<Tree_entry>::destroy(TreeNode<Tree_entry> *subroot) {
 //}
 //---------------------------------------------------------
 template<class Tree_entry>
-Error_code Tree<Tree_entry>::insertAt(TreeNode<Tree_entry> *parent, bool left_or_right, Tree_entry x, TreeNode<Tree_entry> *&new_node)
+Error_code Tree<Tree_entry>::insertAt(TreeNode<Tree_entry> *parent, 
+	bool left_or_right, Tree_entry x, TreeNode<Tree_entry> *&new_node)
 {
-	//This method make a new node of value x and insert into the left or the right of the parent node.
-	//If the parent is NULL, and the root of the tree is NULL, the new node becomes the root of the tree
-	//If the parent is not NULL, and the left_or_right is true (false), and the left (right) child of parent is NULL, 
+	//This method make a new node of value x and insert into the left or 
+	//the right of the parent node.
+	//If the parent is NULL, and the root of the tree is NULL, the new node 
+	//becomes the root of the tree
+	//If the parent is not NULL, and the left_or_right is true (false), 
+	//and the left (right) child of parent is NULL, 
 	//the new node is added to the left (right) of the parent
 	//The return value is success for those cases and the new_node points to the new node.
 	//Otherwise, the return value is fail and the new_node is unchanged
@@ -85,7 +90,7 @@ template<class Tree_entry>
 void Tree<Tree_entry>::printLNR_recursive(TreeNode<Tree_entry> *subroot) {
 	if (subroot != NULL) {
 	printLNR_recursive(subroot->left);
-	cout << subroot-> << " ";
+	cout << subroot->entry << " ";
 	printLNR_recursive(subroot->right);
 	}
 }
@@ -117,7 +122,7 @@ TreeNode<Tree_entry> * Tree<Tree_entry>::build_tree_from_keyboard_recur () {
 		p->left = build_tree_from_keyboard_recur ();
 		cout << "Enter the right sub-tree of " << data << "\n";
 		p->right = build_tree_from_keyboard_recur ();
-		return p
+		return p;
 	}
 	return NULL;
 }
