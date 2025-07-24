@@ -330,4 +330,51 @@ void Tree<Tree_entry>::delete_leaves_and_printNLR() {
     printNLR();
     cout << endl;
 }
+
+// LinkList implementation
+template <class T>
+LinkList<T>::~LinkList() {
+    ListNode<T> *cur = head;
+    while (cur) {
+        ListNode<T> *tmp = cur;
+        cur = cur->next;
+        delete tmp;
+    }
+}
+
+template <class T>
+void LinkList<T>::append(const T& value) {
+    ListNode<T> *node = new ListNode<T>(value);
+    if (!head) {
+        head = tail = node;
+    } else {
+        tail->next = node;
+        tail = node;
+    }
+}
+
+template <class T>
+void LinkList<T>::print() const {
+    ListNode<T> *cur = head;
+    while (cur) {
+        cout << cur->data << " ";
+        cur = cur->next;
+    }
+    cout << endl;
+}
+
+// Tree LNR to list
+template<class Tree_entry>
+void Tree<Tree_entry>::tree_to_list_LNR(TreeNode<Tree_entry> *subroot, LinkList<Tree_entry>& list) {
+    if (subroot == NULL) return;
+    tree_to_list_LNR(subroot->left, list);
+    list.append(subroot->entry);
+    tree_to_list_LNR(subroot->right, list);
+}
+
+template<class Tree_entry>
+void Tree<Tree_entry>::to_list_LNR(LinkList<Tree_entry>& list) {
+    tree_to_list_LNR(root, list);
+}
+
 #endif //__TREESAMPLE__CPP__

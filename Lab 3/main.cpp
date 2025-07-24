@@ -13,7 +13,7 @@ int main() {
 	// aTree.insertAt(p2, false, 5, p5);  //p5 is on the right of p2
 	// aTree.insertAt(p3, true, 6, p6);   //p6 is on the left of p3
 	// aTree.insertAt(p3, false, 7, p7);  //p7 is on the right of p3
-	// aTree.printLNR(); //should print 4 2 5 1 6 3 7
+	// aTree.printLNR(); // 4 2 5 1 6 3 7
 	// cout << endl;
 	/* At this point, the tree is
 	           1
@@ -41,23 +41,23 @@ int main() {
 	expressiontree.insertAt(e7, true, "16", e8);
 	expressiontree.insertAt(e7, false, "4", e9);
 	// 4.2
-	expressiontree.printLNR(); //should print 12 - 7 + 3 * 16 / 4 //inorder
+	expressiontree.printLNR(); // 12 - 7 + 3 * 16 / 4 //inorder
 	cout << endl;
-	expressiontree.printLRN(); //should print 12 7 - 3 16 4 / * + //postorder
+	expressiontree.printLRN(); // 12 7 - 3 16 4 / * + //postorder
 	cout << endl;
-	expressiontree.printNLR(); //should print + - 12 7 * 3 / 16 4 //preorder
+	expressiontree.printNLR(); // + - 12 7 * 3 / 16 4 //preorder
 	cout << endl;
-	expressiontree.printNRL(); //should print + - 12 7 * 3 4 16 /
+	expressiontree.printNRL(); // + - 12 7 * 3 4 16 /
 	cout << endl;
-	expressiontree.printRNL(); //should print 4 / 16 * 3 + 7 - 12
+	expressiontree.printRNL(); // 4 / 16 * 3 + 7 - 12
 	cout << endl;
-	expressiontree.printRLN(); //should print 4 16 / 3 * 7 - 12 +
+	expressiontree.printRLN(); // 4 16 / 3 * 7 - 12 +
 	cout << endl;
 	// 4.3
-	expressiontree.print_tree_height(); //should print 4
+	expressiontree.print_tree_height(); // 4
 
 	// 4.4
-	expressiontree.print_isbalanced(); //should print true
+	expressiontree.print_isbalanced(); // true
 
 	// 4.5
 	expressiontree.printafterswap(); //print NLR after swap
@@ -66,8 +66,23 @@ int main() {
 	expressiontree.printcount_leaves(); // 5
 
 	// 4.7
-	expressiontree.delete_leaves_and_printNLR(); //should print 
+	expressiontree.delete_leaves_and_printNLR(); // 
 
+	// 4.8
+	Tree<string> expressiontree2;
+	TreeNode<string> *n1, *n2, *n3, *n4, *n5, *n6, *n7, *n8, *n9;
+	expressiontree2.insertAt(NULL, true, "+", n1);
+	expressiontree2.insertAt(n1, true, "-", n2);
+	expressiontree2.insertAt(n1, false, "*", n3);
+	expressiontree2.insertAt(n2, true, "12", n4);
+	expressiontree2.insertAt(n2, false, "7", n5);
+	expressiontree2.insertAt(n3, true, "3", n6);
+	expressiontree2.insertAt(n3, false, "/", n7);
+	expressiontree2.insertAt(n7, true, "16", n8);
+	expressiontree2.insertAt(n7, false, "4", n9);
+	LinkList<string> list;
+	expressiontree2.to_list_LNR(list); //12 - 7 + 3 * 16 / 4
+	list.print(); 
 
 	return 0;
 }
