@@ -14,6 +14,7 @@ template<class Node_entry>
 TreeNode<Node_entry>::TreeNode() {
 	left = right = NULL;
 }
+
 //---------------------------------------------------------
 template<class Node_entry>
 TreeNode<Node_entry>::TreeNode(Node_entry item, TreeNode<Node_entry> * left, TreeNode<Node_entry> *right) {
@@ -21,17 +22,20 @@ TreeNode<Node_entry>::TreeNode(Node_entry item, TreeNode<Node_entry> * left, Tre
 	this->left = left;
 	this->right = right;
 }
+
 //---------------------------------------------------------
 template<class Tree_entry>
 Tree<Tree_entry>::Tree() {
 	root = NULL;
 }
+
 //---------------------------------------------------------
 template<class Tree_entry>
 Tree<Tree_entry>::~Tree() {
 	destroy(root);
 	root = NULL;
 }
+
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::destroy(TreeNode<Tree_entry> *subroot) {
@@ -41,10 +45,12 @@ void Tree<Tree_entry>::destroy(TreeNode<Tree_entry> *subroot) {
 		delete subroot;
 	}
 }
+
 //---------------------------------------------------------
 //template<class Tree_entry>
 //Tree<Tree_entry>::size() {
 //}
+
 //---------------------------------------------------------
 template<class Tree_entry>
 Error_code Tree<Tree_entry>::insertAt(TreeNode<Tree_entry> *parent, 
@@ -85,6 +91,7 @@ template<class Tree_entry>
 bool Tree<Tree_entry>::empty() {
 	return (root==NULL);
 }
+
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printLNR_recursive(TreeNode<Tree_entry> *subroot) {
@@ -99,6 +106,22 @@ void Tree<Tree_entry>::printLNR_recursive(TreeNode<Tree_entry> *subroot) {
 template<class Tree_entry>
 void Tree<Tree_entry>::printLNR() {
 	printLNR_recursive(root);
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::printLRN_recursive(TreeNode<Tree_entry> *subroot){
+	if(subroot != NULL){
+		printLRN_recursive(subroot->left);
+		printLRN_recursive(subroot->right);
+		cout << subroot->entry << " ";
+	}
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::printLRN(){
+	printLRN_recursive(root);
 }
 
 //---------------------------------------------------------
