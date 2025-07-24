@@ -56,5 +56,8 @@ int main() {
 	// 4.3
 	expressiontree.print_tree_height(); //should print 4
 
+	// 4.4
+	expressiontree.print_isbalanced(); //should print true
+
 	return 0;
 }

@@ -249,4 +249,25 @@ void Tree<Tree_entry>::print_tree_height() {
 	cout << "The height of the tree is: " << height << endl;
 }
 
+//---------------------------------------------------------
+template<class Tree_entry>
+bool Tree<Tree_entry>::isbalanced(TreeNode<Tree_entry> *root) {
+	if(abs(tree_left_height(root) - tree_right_height(root)) <= 1) {
+		if(root->left != NULL && !isbalanced(root->left)) return false; //neu left con khong can bang
+		if(root->right != NULL && !isbalanced(root->right)) return false; //neu right con khong can bang
+		return true;
+	}
+	return false;
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::print_isbalanced() {
+	if(isbalanced(root)) {
+		cout << "The tree is balanced." << endl;
+	} else {
+		cout << "The tree is not balanced." << endl;
+	}
+}
+
 #endif //__TREESAMPLE__CPP__
