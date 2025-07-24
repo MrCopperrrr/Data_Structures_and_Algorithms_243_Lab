@@ -61,7 +61,10 @@ int main() {
 
 	// 4.5
 	expressiontree.printafterswap(); //print NLR after swap
-	
+
+	// 4.6
+	expressiontree.printcount_leaves(); //
+
 
 	return 0;
 }

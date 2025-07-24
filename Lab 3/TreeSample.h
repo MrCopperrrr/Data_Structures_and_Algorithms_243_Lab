@@ -36,7 +36,7 @@ public:
 	void print_tree_height();
 	void print_isbalanced();
 	void printafterswap();
-
+	void printcount_leaves();
 	
 	protected:
 	TreeNode<Tree_entry> *root;
@@ -52,6 +52,7 @@ public:
 	int tree_left_height(TreeNode<Tree_entry> *);
 	int tree_right_height(TreeNode<Tree_entry> *);
 	bool isbalanced(TreeNode<Tree_entry> *);
+	int count_leaves_recursive(TreeNode<Tree_entry> *);
 
 	void swapleftandright(TreeNode<Tree_entry> *);
 };

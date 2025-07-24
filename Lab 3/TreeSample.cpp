@@ -288,6 +288,22 @@ void Tree<Tree_entry>:: printafterswap(){
 	swapleftandright(root);
 	cout << "Print after swap (NLR): ";
 	printNLR();
+	cout << endl;
 }
 
+//---------------------------------------------------------
+template<class Tree_entry>
+int Tree<Tree_entry>::count_leaves_recursive(TreeNode<Tree_entry> *subroot) {
+	if(subroot == NULL) return 0;
+	if(subroot->left == NULL && subroot->right == NULL)
+		return 1;
+	return count_leaves_recursive(subroot->left) + count_leaves_recursive(subroot->right);	
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::printcount_leaves() {
+	cout << "Number of leaves in the tree: ";
+	cout << count_leaves_recursive(root) << endl;
+}
 #endif //__TREESAMPLE__CPP__
