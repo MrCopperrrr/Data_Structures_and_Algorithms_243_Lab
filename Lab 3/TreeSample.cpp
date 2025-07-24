@@ -106,7 +106,9 @@ void Tree<Tree_entry>::printLNR_recursive(TreeNode<Tree_entry> *subroot) {
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printLNR() {
+	cout << "Print LNR: ";
 	printLNR_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -122,7 +124,9 @@ void Tree<Tree_entry>::printLRN_recursive(TreeNode<Tree_entry> *subroot){
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printLRN(){
+	cout << "Print LRN: ";
 	printLRN_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -138,7 +142,9 @@ void Tree<Tree_entry>::printNLR_recursive(TreeNode<Tree_entry> *subroot){
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printNLR(){
+	cout << "Print NLR: ";
 	printNLR_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -154,7 +160,9 @@ void Tree<Tree_entry>::printNRL_recursive(TreeNode<Tree_entry> *subroot){
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printNRL(){
+	cout << "Print NRL: ";
 	printNRL_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -170,7 +178,9 @@ void Tree<Tree_entry>::printRNL_recursive(TreeNode<Tree_entry> *subroot){
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printRNL(){
+	cout << "Print RNL: ";
 	printRNL_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -186,7 +196,9 @@ void Tree<Tree_entry>::printRLN_recursive(TreeNode<Tree_entry> *subroot){
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::printRLN(){
+	cout << "Print RLN: ";
 	printRLN_recursive(root);
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -245,8 +257,10 @@ int Tree<Tree_entry>:: tree_right_height(TreeNode<Tree_entry> *subroot) {
 //---------------------------------------------------------
 template<class Tree_entry>
 void Tree<Tree_entry>::print_tree_height() {
+	cout << endl;
 	int height = treeheight();
 	cout << "The height of the tree is: " << height << endl;
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -268,6 +282,7 @@ void Tree<Tree_entry>::print_isbalanced() {
 	} else {
 		cout << "The tree is not balanced." << endl;
 	}
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -286,7 +301,7 @@ void Tree<Tree_entry>::swapleftandright(TreeNode<Tree_entry> *subroot) {
 template<class Tree_entry>
 void Tree<Tree_entry>:: printafterswap(){
 	swapleftandright(root);
-	cout << "Print after swap (NLR): ";
+	cout << "After swap ";
 	printNLR();
 	cout << endl;
 }
@@ -305,6 +320,7 @@ template<class Tree_entry>
 void Tree<Tree_entry>::printcount_leaves() {
 	cout << "Number of leaves in the tree: ";
 	cout << count_leaves_recursive(root) << endl;
+	cout << endl;
 }
 
 //---------------------------------------------------------
@@ -355,6 +371,7 @@ void LinkList<T>::append(const T& value) {
 
 template <class T>
 void LinkList<T>::print() const {
+	cout << "LinkedList: ";
     ListNode<T> *cur = head;
     while (cur) {
         cout << cur->data << " ";

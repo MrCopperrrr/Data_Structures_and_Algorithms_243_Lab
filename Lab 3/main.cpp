@@ -14,7 +14,7 @@ int main() {
 	// aTree.insertAt(p3, true, 6, p6);   //p6 is on the left of p3
 	// aTree.insertAt(p3, false, 7, p7);  //p7 is on the right of p3
 	// aTree.printLNR(); // 4 2 5 1 6 3 7
-	// cout << endl;
+	// 
 	/* At this point, the tree is
 	           1
 			 /   \
@@ -42,17 +42,17 @@ int main() {
 	expressiontree.insertAt(e7, false, "4", e9);
 	// 4.2
 	expressiontree.printLNR(); // 12 - 7 + 3 * 16 / 4 //inorder
-	cout << endl;
+	
 	expressiontree.printLRN(); // 12 7 - 3 16 4 / * + //postorder
-	cout << endl;
+	
 	expressiontree.printNLR(); // + - 12 7 * 3 / 16 4 //preorder
-	cout << endl;
+	
 	expressiontree.printNRL(); // + - 12 7 * 3 4 16 /
-	cout << endl;
+	
 	expressiontree.printRNL(); // 4 / 16 * 3 + 7 - 12
-	cout << endl;
+	
 	expressiontree.printRLN(); // 4 16 / 3 * 7 - 12 +
-	cout << endl;
+	
 	// 4.3
 	expressiontree.print_tree_height(); // 4
 
