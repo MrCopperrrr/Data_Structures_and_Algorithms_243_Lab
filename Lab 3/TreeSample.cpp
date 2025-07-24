@@ -158,6 +158,22 @@ void Tree<Tree_entry>::printNRL(){
 
 //---------------------------------------------------------
 template<class Tree_entry>
+void Tree<Tree_entry>::printRNL_recursive(TreeNode<Tree_entry> *subroot){
+	if(subroot != NULL){
+		printRNL_recursive(subroot->right);
+		cout << subroot->entry << " ";
+		printRNL_recursive(subroot->left);
+	}
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::printRNL(){
+	printRNL_recursive(root);
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
 void Tree<Tree_entry>::build_tree_from_keyboard () {
 	root = build_tree_from_keyboard_recur() ;
 }
