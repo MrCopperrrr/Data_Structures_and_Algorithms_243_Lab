@@ -21,7 +21,7 @@ public:
 	~Tree();
 	
 	bool empty();
-//	int size();
+	int size();
 	Error_code insertAt(TreeNode<Tree_entry> *, bool, Tree_entry, TreeNode<Tree_entry> *&);
 	void printLNR();
 	void printLRN();

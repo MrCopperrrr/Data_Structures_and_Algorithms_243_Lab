@@ -47,9 +47,10 @@ void Tree<Tree_entry>::destroy(TreeNode<Tree_entry> *subroot) {
 }
 
 //---------------------------------------------------------
-//template<class Tree_entry>
-//Tree<Tree_entry>::size() {
-//}
+template<class Tree_entry>
+int Tree<Tree_entry>::size() {
+	return 0;
+}
 
 //---------------------------------------------------------
 template<class Tree_entry>
