@@ -24,8 +24,11 @@ public:
 //	int size();
 	Error_code insertAt(TreeNode<Tree_entry> *, bool, Tree_entry, TreeNode<Tree_entry> *&);
 	void printLNR();
-//	void printLRN();
-//	void printNLR();
+	void printLRN();
+	void printNLR();
+	void printNRL();
+	void printRNL();
+	void printRLN();
 
     void build_tree_from_keyboard ();
 
@@ -33,6 +36,11 @@ protected:
 	TreeNode<Tree_entry> *root;
 	void destroy(TreeNode<Tree_entry> *);
 	void printLNR_recursive(TreeNode<Tree_entry> *);
+	void printLRN_recursive(TreeNode<Tree_entry> *);
+	void printNLR_recursive(TreeNode<Tree_entry> *);
+	void printNRL_recursive(TreeNode<Tree_entry> *);
+	void printRNL_recursive(TreeNode<Tree_entry> *);
+	void printRLN_recursive(TreeNode<Tree_entry> *);
     TreeNode<Tree_entry> * build_tree_from_keyboard_recur ();
 };
 
