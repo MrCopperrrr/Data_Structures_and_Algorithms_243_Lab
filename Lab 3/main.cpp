@@ -63,7 +63,10 @@ int main() {
 	expressiontree.printafterswap(); //print NLR after swap
 
 	// 4.6
-	expressiontree.printcount_leaves(); //
+	expressiontree.printcount_leaves(); // 5
+
+	// 4.7
+	expressiontree.delete_leaves_and_printNLR(); //should print 
 
 
 	return 0;

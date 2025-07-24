@@ -306,4 +306,30 @@ void Tree<Tree_entry>::printcount_leaves() {
 	cout << "Number of leaves in the tree: ";
 	cout << count_leaves_recursive(root) << endl;
 }
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::delete_leaves(TreeNode<Tree_entry>* &subroot) {
+	if(suvbroot == NULL) reutrn;
+	if(subroot->left == NULL && subroot->right == NULL) {
+		delete subroot;
+		subroot = NULL;
+		return;
+	}
+	if(subroot->left != NULL) {
+		delete_leaves(subroot->left);
+	}
+	if(subroot->right != NULL) {
+		delete_leaves(subroot->right);
+	}
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::delete_leaves_and_printNLR() {
+	delete_leaves(root);
+	cout << "Print NLR after deleting all leaves: ";
+	printNLR();
+	cout << endl;
+}
 #endif //__TREESAMPLE__CPP__

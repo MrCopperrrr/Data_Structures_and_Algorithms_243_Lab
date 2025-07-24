@@ -29,14 +29,15 @@ public:
 	void printNRL();
 	void printRNL();
 	void printRLN();
-
+	
     void build_tree_from_keyboard ();
-
+	
 	int treeheight();
 	void print_tree_height();
 	void print_isbalanced();
 	void printafterswap();
 	void printcount_leaves();
+	void delete_leaves_and_printNLR();
 	
 	protected:
 	TreeNode<Tree_entry> *root;
@@ -55,6 +56,7 @@ public:
 	int count_leaves_recursive(TreeNode<Tree_entry> *);
 
 	void swapleftandright(TreeNode<Tree_entry> *);
+	void delete_leaves(TreeNode<Tree_entry>* &);
 };
 
 #endif //__TREESAMPLE__H__
