@@ -53,6 +53,8 @@ int main() {
 	cout << endl;
 	expressiontree.printRLN(); //should print 4 16 / 3 * 7 - 12 +
 	cout << endl;
+	// 4.3
+	expressiontree.print_tree_height(); //should print 4
 
 	return 0;
 }

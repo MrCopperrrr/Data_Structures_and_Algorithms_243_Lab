@@ -215,4 +215,38 @@ TreeNode<Tree_entry> * Tree<Tree_entry>::build_tree_from_keyboard_recur () {
 	return NULL;
 }
 
+//---------------------------------------------------------
+template<class Tree_entry>
+int Tree<Tree_entry>::treeheight() {
+	if(root == NULL) return 0;
+	int left_height = tree_left_height(root->left);
+	int right_height = tree_right_height(root->right);
+	return max(left_height, right_height) + 1;
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+int Tree<Tree_entry>:: tree_left_height(TreeNode<Tree_entry> *subroot) {
+	if(subroot != NULL){
+		return tree_left_height(subroot->left) + 1;
+	}
+	return 0;
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+int Tree<Tree_entry>:: tree_right_height(TreeNode<Tree_entry> *subroot) {
+	if(subroot != NULL){
+		return tree_right_height(subroot->right) + 1;
+	}
+	return 0;
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::print_tree_height() {
+	int height = treeheight();
+	cout << "The height of the tree is: " << height << endl;
+}
+
 #endif //__TREESAMPLE__CPP__

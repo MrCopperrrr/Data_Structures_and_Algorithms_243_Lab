@@ -32,7 +32,10 @@ public:
 
     void build_tree_from_keyboard ();
 
-protected:
+	int treeheight();
+	void print_tree_height();
+	
+	protected:
 	TreeNode<Tree_entry> *root;
 	void destroy(TreeNode<Tree_entry> *);
 	void printLNR_recursive(TreeNode<Tree_entry> *);
@@ -42,6 +45,9 @@ protected:
 	void printRNL_recursive(TreeNode<Tree_entry> *);
 	void printRLN_recursive(TreeNode<Tree_entry> *);
     TreeNode<Tree_entry> * build_tree_from_keyboard_recur ();
+
+	int tree_left_height(TreeNode<Tree_entry> *);
+	int tree_right_height(TreeNode<Tree_entry> *);
 };
 
 #endif //__TREESAMPLE__H__
