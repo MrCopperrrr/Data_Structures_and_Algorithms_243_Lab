@@ -142,11 +142,11 @@ void Tree<Tree_entry>::printNLR(){
 
 //---------------------------------------------------------
 template<class Tree_entry>
-void Tree<Tree_entry>::printNLR_recursive(TreeNode<Tree_entry> *subroot){
+void Tree<Tree_entry>::printNRL_recursive(TreeNode<Tree_entry> *subroot){
 	if(subroot != NULL){
 		cout << subroot->entry << " ";
-		printNLR_recursive(subroot->right);
-		printNLR_recursive(subroot->left);
+		printNRL_recursive(subroot->right);
+		printNRL_recursive(subroot->left);
 	}
 }
 
