@@ -270,4 +270,24 @@ void Tree<Tree_entry>::print_isbalanced() {
 	}
 }
 
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>::swapleftandright(TreeNode<Tree_entry> *subroot) {
+	if (subroot != NULL) {
+		TreeNode<Tree_entry> *temp = subroot->left;
+		subroot->left = subroot->right;
+		subroot->right = temp;
+		swapleftandright(subroot->left);
+		swapleftandright(subroot->right);
+	}
+}
+
+//---------------------------------------------------------
+template<class Tree_entry>
+void Tree<Tree_entry>:: printafterswap() {
+	swapleftandright(root);
+	cout << "Print after swap (NLR): ";
+	printNLR();
+}
+
 #endif //__TREESAMPLE__CPP__

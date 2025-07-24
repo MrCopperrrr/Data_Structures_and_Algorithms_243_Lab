@@ -35,6 +35,7 @@ public:
 	int treeheight();
 	void print_tree_height();
 	void print_isbalanced();
+	void printafterswap();
 
 	
 	protected:
@@ -51,6 +52,8 @@ public:
 	int tree_left_height(TreeNode<Tree_entry> *);
 	int tree_right_height(TreeNode<Tree_entry> *);
 	bool isbalanced(TreeNode<Tree_entry> *);
+
+	void swapleftandright(TreeNode<Tree_entry> *);
 };
 
 #endif //__TREESAMPLE__H__

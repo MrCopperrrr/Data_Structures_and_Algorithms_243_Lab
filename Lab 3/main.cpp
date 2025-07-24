@@ -41,11 +41,11 @@ int main() {
 	expressiontree.insertAt(e7, true, "16", e8);
 	expressiontree.insertAt(e7, false, "4", e9);
 	// 4.2
-	expressiontree.printLNR(); //should print 12 - 7 + 3 * 16 / 4
+	expressiontree.printLNR(); //should print 12 - 7 + 3 * 16 / 4 //inorder
 	cout << endl;
-	expressiontree.printLRN(); //should print 12 7 - 3 16 4 / * +
+	expressiontree.printLRN(); //should print 12 7 - 3 16 4 / * + //postorder
 	cout << endl;
-	expressiontree.printNLR(); //should print + - 12 7 * 3 / 16 4
+	expressiontree.printNLR(); //should print + - 12 7 * 3 / 16 4 //preorder
 	cout << endl;
 	expressiontree.printNRL(); //should print + - 12 7 * 3 4 16 /
 	cout << endl;
@@ -58,6 +58,10 @@ int main() {
 
 	// 4.4
 	expressiontree.print_isbalanced(); //should print true
+
+	// 4.5
+	expressiontree.printafterswap(); //print NLR after swap
+	
 
 	return 0;
 }
