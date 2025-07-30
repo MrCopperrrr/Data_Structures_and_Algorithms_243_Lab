@@ -2,23 +2,32 @@
 #include <iostream>
 using namespace std;
 
-//2.1
 int main() {
-	// AVL_tree tree;
-	// int values[] = {71, 1, 4, 13, 87, 91, 72, 33, 19, 60, 59, 21, 17};
-	// int n = sizeof(values) / sizeof(values[0]);
-	// for (int i = 0; i < n; ++i) {
-	// 	tree.insert(values[i]);
-	// 	tree.printLNR();
-	// }
-    
+    //2.1
     AVL_tree tree;
-    tree.insert(6);
-    tree.insert(5);
-    tree.insert(7);
-    tree.insert(6);  // duplicate
-    
-    tree.printLNR();  // output 5 6 6 7
-    return 0;
+    int values[] = {71, 1, 4, 13, 87, 91, 72, 33, 19, 60, 59, 21, 17};
+    int n = sizeof(values) / sizeof(values[0]);
 
+    cout << "=== Insert Test ===\n";
+    for (int i = 0; i < n; ++i) {
+        cout << "Insert " << values[i] << ": ";
+        tree.insert(values[i]);
+        tree.printLNR();
+    }
+    //2.2
+    cout << "\n=== Duplicate Insert Test ===\n";
+    tree.insert(13); 
+    tree.printLNR();  
+
+    //2.3
+    cout << "\n=== Remove Test ===\n";
+
+    int to_remove[] = {13, 71, 4};  
+    for (int x : to_remove) {
+        cout << "Remove " << x << ": ";
+        tree.remove(x);
+        tree.printLNR();
+    }
+
+    return 0;
 }
