@@ -4,12 +4,21 @@ using namespace std;
 
 //2.1
 int main() {
-	AVL_tree tree;
-	int values[] = {71, 1, 4, 13, 87, 91, 72, 33, 19, 60, 59, 21, 17};
-	int n = sizeof(values) / sizeof(values[0]);
-	for (int i = 0; i < n; ++i) {
-		tree.insert(values[i]);
-		tree.printLNR();
-	}
-	return 0;
+	// AVL_tree tree;
+	// int values[] = {71, 1, 4, 13, 87, 91, 72, 33, 19, 60, 59, 21, 17};
+	// int n = sizeof(values) / sizeof(values[0]);
+	// for (int i = 0; i < n; ++i) {
+	// 	tree.insert(values[i]);
+	// 	tree.printLNR();
+	// }
+    
+    AVL_tree tree;
+    tree.insert(6);
+    tree.insert(5);
+    tree.insert(7);
+    tree.insert(6);  // duplicate
+    
+    tree.printLNR();  // output 5 6 6 7
+    return 0;
+
 }
