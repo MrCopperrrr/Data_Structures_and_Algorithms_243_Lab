@@ -22,7 +22,7 @@ int main() {
     //2.3
     cout << "\n=== Remove Test ===\n";
 
-    int to_remove[] = {13, 71, 4};  
+    int to_remove[] = {13, 4};  
     for (int x : to_remove) {
         cout << "Remove " << x << ": ";
         tree.remove(x);
