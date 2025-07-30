@@ -1,9 +1,9 @@
 #ifndef __AVL__CPP__
 #define __AVL__CPP__
 
-#include <iostream.h>
+#include <iostream>
 #include "AVL.h"
-
+using namespace std;
 //---------------------------------------------------------
 AVL_node::AVL_node()
 {
