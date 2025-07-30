@@ -26,7 +26,19 @@ void Heap::ReheapUp(int position)
 //---------------------------------------------------------
 void Heap::ReheapDown(int position, int lastPosition)
 {
-//please fill your code here
+	int left = 2 * position + 1;
+	int right = 2 * position + 2;
+	int largest = position;
+
+	if (left <= lastPosition && data[left] > data[largest])
+		largest = left;
+	if (right <= lastPosition && data[right] > data[largest])
+		largest = right;
+
+	if (largest != position) {
+		swap(position, largest);
+		ReheapDown(largest, lastPosition);
+	}
 }
 //---------------------------------------------------------
 void Heap::swap(int low, int high)
@@ -71,7 +83,12 @@ Error_code Heap::insertHeap(int dataIn)
 //---------------------------------------------------------
 Error_code Heap::deleteHeap(int &dataOut)
 {
-//please fill you code here
+	if (empty()) return underflow;
+	dataOut = data[0];
+	data[0] = data[count - 1];
+	count--;
+	ReheapDown(0, count - 1);
+	return success;
 }
 //---------------------------------------------------------
 Error_code Heap::buildHeap(int listData[], int size)
