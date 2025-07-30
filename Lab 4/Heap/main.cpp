@@ -36,7 +36,7 @@ int main() {
     int size = inputVec.size();
     for (int i = 0; i < size; ++i) arr[i] = inputVec[i];
     heap25.buildHeap(arr, size);
-    cout << "Heap: ";
+    cout << "MaxHeap: ";
     heap25.printHeap();
 
     //2.5 MinHeap
