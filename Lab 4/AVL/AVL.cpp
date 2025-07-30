@@ -65,9 +65,23 @@ Error_code AVL_tree::avl_insert(AVL_node *&sub_root,
 		sub_root = new AVL_node(new_data);
 		taller = true;
 	}
+	//2.2
 	else if (new_data == sub_root->data) {
-		result = dupplicated;
-		taller = false;
+		result = avl_insert(sub_root->right, new_data, taller);
+		if (taller == true)
+			switch (sub_root->get_balance()) {
+			case left_higher:
+				sub_root->set_balance(equal_height);
+				taller = false;
+				break;
+			case equal_height:
+				sub_root->set_balance(right_higher);
+				break;
+			case right_higher:
+				right_balance(sub_root, taller);
+				taller = false;
+				break;
+			}
 	}
 	else if (new_data < sub_root->data) { 
 		result = avl_insert(sub_root->left, new_data, taller);
