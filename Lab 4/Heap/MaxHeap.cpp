@@ -1,8 +1,9 @@
 #ifndef __MAXHEAP__CPP__
 #define __MAXHEAP__CPP__
 
-#include <iostream.h>
+#include <iostream>
 #include "MaxHeap.h"
+using namespace std;
 
 //---------------------------------------------------------				
 Heap::Heap()
