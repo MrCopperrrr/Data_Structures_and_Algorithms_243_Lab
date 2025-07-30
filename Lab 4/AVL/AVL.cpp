@@ -142,7 +142,9 @@ Error_code AVL_tree::avl_remove(AVL_node *&sub_root,
 			delete to_delete;
 		}
 		else if (sub_root->left == NULL) {
-//please fill your code here
+			sub_root = sub_root->right;
+			shorter = true;
+			delete to_delete;
 		}
 		else {
 			to_delete = sub_root -> left;
@@ -157,11 +159,13 @@ Error_code AVL_tree::avl_remove(AVL_node *&sub_root,
 			shorter = false;
 			break;
 			case left_higher:
-//please fill your code here
+			sub_root->set_balance(equal_height);
 			break;
+
 			case right_higher:
-//please fill your code here
-				break;
+			left_balance(sub_root, shorter);
+			break;
+
 			}
 		}
 	}
@@ -182,7 +186,20 @@ Error_code AVL_tree::avl_remove(AVL_node *&sub_root,
 			}
 	}
 	else {
-//please fill your code here		
+		result = avl_remove(sub_root->right, old_data, shorter);
+		if (shorter == true)
+			switch (sub_root->get_balance()) {
+			case equal_height:
+				sub_root->set_balance(left_higher);
+				shorter = false;
+				break;
+			case right_higher:
+				sub_root->set_balance(equal_height);
+				break;
+			case left_higher:
+				left_balance(sub_root, shorter);
+				break;
+			}
 	}
 	return result;
 }
