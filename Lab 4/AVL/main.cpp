@@ -20,14 +20,14 @@ int main() {
     tree.printLNR();  
 
     //2.3
-    // cout << "\n=== Remove Test ===\n";
+    cout << "\n=== Remove Test ===\n";
 
-    // int to_remove[] = {13, 4};  
-    // for (int x : to_remove) {
-    //     cout << "Remove " << x << ": ";
-    //     tree.remove(x);
-    //     tree.printLNR();
-    // }
+    int to_remove[] = {13, 4, 21};  
+    for (int x : to_remove) {
+        cout << "Remove " << x << ": ";
+        tree.remove(x);
+        tree.printLNR();
+    }
 
     return 0;
 }

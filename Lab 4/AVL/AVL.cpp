@@ -144,33 +144,19 @@ Error_code AVL_tree::avl_remove(AVL_node *&sub_root,
 			delete to_delete;
 		}
 		else if (sub_root->left == NULL) {
-//please fill your code here
+			// remove node only right child
+			sub_root = sub_root->right;
+			shorter = true;
+			delete to_delete;
 		}
 		else {
-			to_delete = sub_root -> left;
+			to_delete = sub_root->left;
 			while (to_delete->right != NULL) 
 				to_delete = to_delete->right; 
-			sub_root -> data = to_delete -> data;
-			result = avl_remove(sub_root -> left,to_delete -> data,shorter);
-			if(shorter == true)
-			switch(sub_root->get_balance()) {
-			case equal_height:
-			sub_root->set_balance(right_higher);
-			shorter = false;
-			break;
-			case left_higher:
-//please fill your code here
-			break;
-			case right_higher:
-//please fill your code here
-				break;
-			}
-		}
-	}
-	else if (old_data < sub_root->data) {
-		result = avl_remove(sub_root -> left,old_data,shorter);
-		if(shorter == true)
-			switch(sub_root->get_balance()) {
+			sub_root->data = to_delete->data;
+			result = avl_remove(sub_root->left, to_delete->data, shorter);
+			if (shorter == true)
+			switch (sub_root->get_balance()) {
 			case equal_height:
 				sub_root->set_balance(right_higher);
 				shorter = false;
@@ -179,12 +165,43 @@ Error_code AVL_tree::avl_remove(AVL_node *&sub_root,
 				sub_root->set_balance(equal_height);
 				break;
 			case right_higher:
-				right_balance(sub_root,shorter);
+				right_balance(sub_root, shorter);
+				break;
+			}
+		}
+	}
+	else if (old_data < sub_root->data) {
+		result = avl_remove(sub_root->left, old_data, shorter);
+		if (shorter == true)
+			switch (sub_root->get_balance()) {
+			case equal_height:
+				sub_root->set_balance(right_higher);
+				shorter = false;
+				break;
+			case left_higher:
+				sub_root->set_balance(equal_height);
+				break;
+			case right_higher:
+				right_balance(sub_root, shorter);
 				break;
 			}
 	}
 	else {
-//please fill your code here		
+		// remove from right subtree
+		result = avl_remove(sub_root->right, old_data, shorter);
+		if (shorter == true)
+			switch (sub_root->get_balance()) {
+			case equal_height:
+				sub_root->set_balance(left_higher);
+				shorter = false;
+				break;
+			case right_higher:
+				sub_root->set_balance(equal_height);
+				break;
+			case left_higher:
+				left_balance(sub_root, shorter);
+				break;
+			}
 	}
 	return result;
 }
