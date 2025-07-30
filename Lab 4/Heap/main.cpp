@@ -1,10 +1,11 @@
 #include <iostream>
 #include "MaxHeap.h"
+#include "MinHeap.h"
 #include <vector>
 using namespace std;
 
 int main() {
-    //2.4
+    //2.4 MaxHeap
     Heap heap24;
     int numbers[] = {71, 1, 4, 13, 87, 91, 72, 33, 19, 60, 59, 21, 17};
     int n = sizeof(numbers) / sizeof(numbers[0]);
@@ -14,7 +15,16 @@ int main() {
         heap24.printHeap();
     }
 
+    //2.4 MinHeap
+    MinHeap minHeap24;
+    cout << "\n--- MinHeap Insertions ---\n";
+    for(int i = 0; i < n; ++i) {
+        cout << "Insert " << numbers[i] << ": ";
+        minHeap24.insertHeap(numbers[i]);
+        minHeap24.printHeap();
+    }
 
+    //2.5 MaxHeap
     Heap heap25;
     vector<int> inputVec;
     int x;
@@ -28,5 +38,12 @@ int main() {
     heap25.buildHeap(arr, size);
     cout << "Heap: ";
     heap25.printHeap();
+
+    //2.5 MinHeap
+    MinHeap minHeap25;
+    minHeap25.buildHeap(arr, size);
+    cout << "MinHeap: ";
+    minHeap25.printHeap();
+
     return 0;
 }
